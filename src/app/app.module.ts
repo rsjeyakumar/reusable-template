@@ -9,6 +9,8 @@ import { AppModuleRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 import { CommunicationService } from './shared/services/communication.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CommunicationService } from './shared/services/communication.service';
     BrowserModule,
     AppModuleRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [CommunicationService],
   bootstrap: [AppComponent]
