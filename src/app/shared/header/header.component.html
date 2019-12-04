@@ -1,11 +1,12 @@
-<nav class="navbar navbar-expand-lg d-none" [ngClass]="{'bg-white shadow d-flex': suserDetails}">
+<nav class="navbar navbar-expand-lg d-none navbar-light" [ngClass]="{'bg-white shadow d-flex': suserDetails}">
     <a class="navbar-brand" href="#">My App</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" [ngClass]="{'show': showMobileMenu}" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i>Home <span
@@ -24,15 +25,36 @@
 
     </div>
 
-    <p-overlayPanel #op>
-
-        <a class="dropdown-item" href="javascript:void()">You Signed in as</a>
-        <a class="dropdown-item" href="javascript:void()"><b>{{suserDetails?.username}}</b></a>
-
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="javascript:void(0)" (click)="logOut()">LogOut</a>
-
-    </p-overlayPanel>
 
 
+</nav>
+<p-overlayPanel #op>
+
+    <a class="dropdown-item" href="javascript:void()">You Signed in as</a>
+    <a class="dropdown-item" href="javascript:void()"><b>{{suserDetails?.username}}</b></a>
+
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="javascript:void(0)" (click)="logOut()">LogOut</a>
+
+</p-overlayPanel>
+
+<nav [ngClass]="{'bg-dark shadow d-lg-block ': suserDetails}"
+    class="secoundary-bar navbar navbar-expand-lg d-none navbar-light text-white">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center order-2" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="javascript:void(0)">Test1</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="javascript:void(0)">Test2</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="javascript:void(0)">Test3</a>
+            </li>
+        </ul>
+    </div>
 </nav>

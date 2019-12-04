@@ -11,6 +11,7 @@ import { User } from '../../models/app.models';
 export class HeaderComponent implements OnInit {
   subjectData: object;
   suserDetails: User;
+  showMobileMenu = false;
   constructor(private comser: CommunicationService, private router: Router) { }
 
   ngOnInit() {
@@ -20,7 +21,6 @@ export class HeaderComponent implements OnInit {
   streamData() {
     this.comser.getMessage().subscribe(
       (res) => {
-        debugger;
         console.log('receiving from header component');
         console.log(res);
         this.subjectData = res;
@@ -36,6 +36,11 @@ export class HeaderComponent implements OnInit {
     this.headerReference();
     this.router.navigate(['']);
   }
+
+  toggleNavbar() {
+    this.showMobileMenu = !this.showMobileMenu;
+  }
+
 
 
 }

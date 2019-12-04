@@ -4,3 +4,8 @@
 /* .nav-item.active .nav-link {
   border-bottom: 2px solid #f60;
 } */
+
+.secoundary-bar a.nav-link {
+  color: #fff;
+  padding: 0 1rem;
+}
