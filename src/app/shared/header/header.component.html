@@ -5,7 +5,6 @@
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" [ngClass]="{'show': showMobileMenu}" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
@@ -20,24 +19,9 @@
                 <a class="nav-link" href="javascript:void(0)" (click)="op.toggle($event)"> <i
                         class="fa fa-user-circle fa-2" aria-hidden="true"></i>Profile</a>
             </li>
-
         </ul>
-
     </div>
-
-
-
 </nav>
-<p-overlayPanel #op>
-
-    <a class="dropdown-item" href="javascript:void()">You Signed in as</a>
-    <a class="dropdown-item" href="javascript:void()"><b>{{suserDetails?.username}}</b></a>
-
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="javascript:void(0)" (click)="logOut()">LogOut</a>
-
-</p-overlayPanel>
-
 <nav [ngClass]="{'bg-dark shadow d-lg-block ': suserDetails}"
     class="secoundary-bar navbar navbar-expand-lg d-none navbar-light text-white">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"

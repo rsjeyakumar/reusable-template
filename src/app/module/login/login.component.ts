@@ -20,10 +20,13 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpService, private router: Router, private passdata: CommunicationService) { }
 
   ngOnInit() {
+    /* Loginform creation */
     this.loginForm = new FormGroup({
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
+
+    /* registration form creation */
     this.registerForm = new FormGroup({
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required]),
@@ -39,10 +42,12 @@ export class LoginComponent implements OnInit {
 
   }
 
+  /* toggle login form and registration form */
   toggleForm() {
     this.toggleLoginReg = !this.toggleLoginReg;
   }
 
+  /* Login api submit */
   loginSubmit() {
     const queryparams = '?username=' + this.loginForm.value.username + '&password=' + this.loginForm.value.password;
     const apiEndpointUrl = this.http.apiUrl + this.http.userDetails + queryparams;
@@ -67,6 +72,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  /* Register api submit */
   registerFormSubmit() {
     this.registerSpin = true;
     const apiEndpointUrl = this.http.apiUrl + this.http.userDetails;
@@ -76,6 +82,12 @@ export class LoginComponent implements OnInit {
         console.log(res);
       }
     );
+  }
+
+  /* Reset Register form */
+  resetRegiserform() {
+    this.registerSpin = false;
+    this.registerForm.reset();
   }
 
 

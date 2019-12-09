@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 // import { FooterComponent } from './shared/footer/footer.component';
 import { AppModuleRoutingModule } from './app-routing.module';
 
+
 import { SharedModule } from './shared/shared.module';
 import { CommunicationService } from './shared/services/communication.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
