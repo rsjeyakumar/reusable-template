@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 
@@ -14,15 +14,15 @@ export class HttpService {
 
   }
 
-  httpHeaders = {
-    headers: new HttpHeaders({
-      'content-type': 'application/json'
-    })
-  };
+  // httpHeaders = {
+  //   headers: new HttpHeaders({
+  //     'content-type': 'application/json'
+  //   })
+  // };
 
 
   createData(url, body) {
-    return this.http.post(url, body, this.httpHeaders);
+    return this.http.post(url, body);
   }
 
   readData(url) {

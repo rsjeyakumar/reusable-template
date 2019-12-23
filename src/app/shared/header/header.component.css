@@ -9,3 +9,15 @@
   color: #fff;
   padding: 0 1rem;
 }
+.navbar {
+  border-bottom: 3px solid #343a40;
+}
+@media screen and (max-width: 990px) {
+  .navbar-nav {
+    border-top: 1px solid #eaeaea;
+    margin-top: 4px;
+  }
+  .navbar-nav li {
+    border-bottom: 1px solid #eaeaea;
+  }
+}
