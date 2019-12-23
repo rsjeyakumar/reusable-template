@@ -5,7 +5,6 @@ import { HttpService } from './http.service';
 
 describe('HttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [],
     imports: [HttpClientTestingModule]
   }));
 
